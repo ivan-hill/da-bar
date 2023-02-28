@@ -1,0 +1,360 @@
+Da Bar
+
+Inspire. Create. Belive
+
+About us
+
+We're fashion studio based in lausanne. 
+We create unique designs that will blow your mind. We also design unique jewellary pieces. 
+Fashion is an ART that can not be grasped by everyone.
+
+We are very dedicated to making our products. 
+We offer unique and creative products to a wide range of people. 
+We have a variety of styles, but for most people, all of the options are in the box. 
+We specialize in making things that make you happy.
+
+We strive to build on our vision. As a fashion label, we do our best to create amazing experiences for all people. 
+We are always looking to make something that is easy for everyone.
+
+
+New Collection:
+
+The brand new collection is currently being developed in USA. 
+We create our products using best quality material, including the use of some of the pure fabrics to make our products. 
+All products are made using the best materials, from the finest cotton to the finest fabrics.
+
+We have lots of different clothing options like shoes, jackets and dresses. 
+Not only clothes but we also provide unique Jewellery as well. 
+It is great for us to carry our new clothes all around the country and look different.
+
+Famous Quotes Used:
+"Fashion is the armour to survive the reality of everyday life."
+-- bill cunningham
+
+"One is never over-dressed or under-dressed with a Little Black Dress." —Karl Lagerfeld
+
+
+New Arrival:
+There is new collection available for cool clothes in all sizes. 
+This collection is a great way to find a new look for you. 
+It offers a variety of cool apparel styles to fit your taste, while you can also find some cool clothes that you can wear everyday.
+
+The first line of clothing you will see on this collection is for men. 
+The collection also includes three new styles for women.
+
+Give it a try and experience a new look.
+
+const ImageContainer = styled.div`
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+const Name = styled.h3`
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+`;
+const Price = styled.p`
+  font-size: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const QuantitySelector = styled.select`
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+`;
+ const Description = styled.p`
+  font-size: 1rem;
+`;
+
+ const AddToCartButton = styled.button`
+   font-size: 1rem;
+   padding: 0.625rem 1.25rem;
+   background-color: 1px solid ${(props) => props.theme.grey};
+   border-radius: 0.5rem;
+   cursor: pointer;
+   &:hover {
+     background-color: grey;
+     color: white;
+   }
+ `;
+
+
+const ProductPage = () => {
+  const [products, setProducts] = useState([]);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  useEffect(() => {
+    Axios.get(fetch("https://dummyjson.com/products"))
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  const handleQuantityChange = (e) => {
+    setSelectedQuantity(e.target.value);
+  };
+
+  const handleAddToCart = (productId) => {
+    console.log(
+      `Adding product ${productId} to cart with quantity ${selectedQuantity}`
+    );
+  };
+
+  return (
+    <ProductContainer>
+      {products.map((product) => (
+        <Card key={product.id}>
+          <ImageContainer>
+            <img src={product.imageUrl} alt={product.name} />
+          </ImageContainer>
+          <Name>{product.name}</Name>
+          <Price>{product.price}</Price>
+          <QuantitySelector
+            value={selectedQuantity}
+            onChange={handleQuantityChange}
+          >
+            {[1, 2, 3, 4, 5].map((num) => (
+              <option key={num} value={num}>
+                {num}
+              </option>
+            ))}
+          </QuantitySelector>
+          <Description>{product.description}</Description>
+          <AddToCartButton onClick={() => handleAddToCart(product.id)}>
+            Add to Cart
+          </AddToCartButton>
+        </Card>
+      ))}
+    </ProductContainer>
+  );
+};
+
+          New Collection
+        </Title>
+        <Left>
+          <p>
+            The brand new collection is currently being developed in USA. We
+            create our products using best quality material, including the use
+            of some of the pure fabrics to make our products. All products are
+            made using the best materials, from the finest cotton to the finest
+            fabrics.
+            <br />
+            <br />
+            We have lots of different clothing options like shoes, jackets and
+            dresses. Not only clothes but we also provide unique Jewellery as
+            well. It is great for us to carry our new clothes all around the
+            country and look different.
+          </p>
+        </Left>
+        <Right ref={horizontalRef}>
+          <Product img={img1} title="Half Pike" />
+          <Product img={img2} title="Full Pike" />
+          <Product img={img3} title="Jumps" />
+          <Product img={img4} title="Ethnic Wear" />
+          <Product img={img5} title="Blazers" />
+          <Product img={img6} title="Suits" />
+          <Product img={img7} title="Antiques" />
+        </Right>
+        
+
+
+//////////////////////////////////////////////////
+
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+
+        const App = () => {
+  const { scroll } = useLocomotiveScroll();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <Router>
+      <motion.div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, pointerEvents: isMenuOpen ? 'auto' : 'none' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} onClick={toggleMenu} ref={scroll}>
+        {/* your menu content */}
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </motion.div>
+
+      <Switch>
+        <Route exact path="/">
+          {/* your home component */}
+        </Route>
+        <Route path="/about">
+          {/* your about component */}
+        </Route>
+        <Route path="/contact">
+          {/* your contact component */}
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
+
+
+/////////////////////////////////////
+
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+const toggleMenu = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
+
+const { scroll } = useLocomotiveScroll();
+
+<motion.div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, pointerEvents: isMenuOpen ? 'auto' : 'none' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} onClick={toggleMenu} ref={scroll}>
+  {/* your menu content */}
+</motion.div>
+
+<button onClick={toggleMenu}>Toggle Menu</button>
+
+
+*********app.js********************************
+
+
+
+
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+import { Link } from "react-router-dom";
+
+const NavContainer = styled(motion.div)`
+	width: 100vw;
+	z-index: 6;
+	position: absolute;
+	top: ${(props) => (props.click ? "0" : `-${props.theme.navHeight}`)};
+
+	display: flex;
+	justify-content: right;
+	align-items: center;
+
+	transition: all 0.3s ease;
+
+	@media (max-width: 40em) {
+		top: ${(props) => (props.click ? "0" : `calc(-50vh - 4rem)`)};
+	}
+`;
+`;
+
+const MenuItems = styled(motion.ul)`
+	position: relative;
+	height: ${(props) => props.theme.navHeight};
+	background-color: ${(props) => props.theme.body};
+	color: ${(props) => props.theme.text};
+	list-style: none;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	width: 100%;
+	padding: 0 10rem;
+
+	@media (max-width: 40em) {
+		flex-direction: column;
+		padding: 2rem 0;
+		height: 50vh;
+	}
+`;
+
+const MenuBtn = styled.li`
+  background-color: ${(props) => `rgba(${props.theme.textRgba}, 0.1)`};
+  list-style-type: style none;
+  color: ${(props) => props.theme.body};
+  width: 15rem;
+  height: 15rem;
+  clip-path: circle(50% at 50% 50%);
+  position: absolute;
+  top: 100%;
+  right: 20%;
+  transform: translateX(100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: ${(props) => props.theme.fontmd};
+  font-weight: 600;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  @media (max-width: 40em) {
+    width: 10rem;
+    height: 2rem;
+  }
+`;
+
+const MenuItem = styled(motion.li)`
+	text-transform: uppercase;
+	color: ${(props) => props.theme.text};
+	cursor: pointer;
+	@media (max-width: 40em) {
+		flex-direction: column;
+		padding: 0.5rem 0;
+	}
+`;
+
+const NavBar = () => {
+	const { scroll } = useLocomotiveScroll();
+
+	const handleScroll = (id) => {
+		let elem = document.querySelector(id);
+		scroll.scrollTo(elem, {
+			offset: "-100",
+			duration: "2000",
+			easing: [0.25, 0.0, 0.35, 1.0],
+		});
+	};
+
+	return (
+		<NavContainer>
+			<MenuItems>
+				<MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
+
+				<MenuItem whileHover={{ scale: 1.1, y: -5 }} whileTap={{ scale: 0.9, Y: 0 }}>
+					<Link to="/about">About</Link>
+				</MenuItem>
+				<MenuItem whileHover={{ scale: 1.1, y: -5 }} whileTap={{ scale: 0.9, Y: 0 }}>
+					<Link to="/shop">Shop</Link>
+				</MenuItem>
+				<MenuItem whileHover={{ scale: 1.1, y: -5 }} whileTap={{ scale: 0.9, Y: 0 }}>
+					<Link to="/skate-park">Skate Park</Link>
+				</MenuItem>
+			</MenuItems>
+		</NavContainer>
+	);
+};
+
+export default NavBar;
+
+
+************************************************************************************************
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/shop" component={Shop} />
+        <Route path="/skate-park" component={SkatePark} />
+      </Switch>
+    </Router>
+  );
+}

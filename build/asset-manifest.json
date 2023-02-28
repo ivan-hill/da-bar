@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d4a2841d.css",
+    "main.js": "/static/js/main.e1b7458d.js",
+    "static/js/329.88c5a787.chunk.js": "/static/js/329.88c5a787.chunk.js",
+    "static/js/986.24e231a4.chunk.js": "/static/js/986.24e231a4.chunk.js",
+    "static/js/730.c1cd71ba.chunk.js": "/static/js/730.c1cd71ba.chunk.js",
+    "static/media/skateboard.mp4": "/static/media/skateboard.1ff344fa21bb198ccf62.mp4",
+    "static/media/coloful-skate.png": "/static/media/coloful-skate.5a6b804df0e0cd828ad5.png",
+    "static/media/3skate.png": "/static/media/3skate.3503800740bb1796fbe3.png",
+    "static/media/skater-vector.png": "/static/media/skater-vector.b9b2fc51fcb092fe0106.png",
+    "static/media/3.webp": "/static/media/3.8b8754a294e720c6ae2a.webp",
+    "static/media/9.jpg": "/static/media/9.7be85302595350609528.jpg",
+    "static/media/1.webp": "/static/media/1.9235cbd98f9fc997387f.webp",
+    "static/media/girl-co.png": "/static/media/girl-co.e85ece8a5588abc3097e.png",
+    "static/media/4.webp": "/static/media/4.3698ec5d836667e7d483.webp",
+    "static/media/2.webp": "/static/media/2.712e19bc4fe23d269006.webp",
+    "static/media/5.webp": "/static/media/5.ff1c7772ec424a16609b.webp",
+    "static/media/6.webp": "/static/media/6.3ae41b7302883ee9b0fa.webp",
+    "static/media/girlskateb.jpg": "/static/media/girlskateb.bc3c79ea647265baaa1b.jpg",
+    "static/media/blaka-hollow-all-400-normal.woff": "/static/media/blaka-hollow-all-400-normal.d343f82a80acd71ad0d4.woff",
+    "static/media/sirin-stencil-all-400-normal.woff": "/static/media/sirin-stencil-all-400-normal.e1b8add18154b5d65682.woff",
+    "static/media/7.webp": "/static/media/7.dc6e9cf6274d59bd2b14.webp",
+    "static/media/sirin-stencil-latin-400-normal.woff2": "/static/media/sirin-stencil-latin-400-normal.f668f96beabdc683277b.woff2",
+    "static/media/blaka-hollow-latin-400-normal.woff2": "/static/media/blaka-hollow-latin-400-normal.9f63d091e493d7424a8a.woff2",
+    "static/media/blaka-hollow-arabic-400-normal.woff2": "/static/media/blaka-hollow-arabic-400-normal.72b65ed3dc6022655714.woff2",
+    "static/media/blaka-hollow-latin-ext-400-normal.woff2": "/static/media/blaka-hollow-latin-ext-400-normal.a991c9ad6d5002c78e32.woff2",
+    "static/media/skateboard.svg": "/static/media/skateboard.8a2c3f77c2f8b98031cd56bdbee8b965.svg",
+    "index.html": "/index.html",
+    "main.d4a2841d.css.map": "/static/css/main.d4a2841d.css.map",
+    "main.e1b7458d.js.map": "/static/js/main.e1b7458d.js.map",
+    "329.88c5a787.chunk.js.map": "/static/js/329.88c5a787.chunk.js.map",
+    "986.24e231a4.chunk.js.map": "/static/js/986.24e231a4.chunk.js.map",
+    "730.c1cd71ba.chunk.js.map": "/static/js/730.c1cd71ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4a2841d.css",
+    "static/js/main.e1b7458d.js"
+  ]
+}
